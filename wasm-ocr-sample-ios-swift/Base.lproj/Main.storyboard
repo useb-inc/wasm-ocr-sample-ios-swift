@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eKh-gt-DNc">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="WMR-gl-trw">
+            <objects>
+                <navigationController storyboardIdentifier="navView" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="eKh-gt-DNc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JFl-lN-0tg">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1Gu-gj-T7Q" kind="relationship" relationship="rootViewController" id="PgI-Hx-AK3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z0c-zD-cTh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-785" y="-27"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ekT-Ho-vwW">
+            <objects>
+                <viewController id="1Gu-gj-T7Q" customClass="ViewController" customModule="wasm_ocr_sample_ios_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5KT-VN-sNH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7e5-WA-YYO">
+                                <rect key="frame" x="46.666666666666657" y="134" width="300" height="584"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NtD-gp-XmQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="84"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alcheraLogo" translatesAutoresizingMaskIntoConstraints="NO" id="EP7-li-ubF">
+                                                <rect key="frame" x="75" y="0.0" width="150" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="aRr-Ne-fQ0"/>
+                                                    <constraint firstAttribute="height" constant="40" id="lk1-9g-89Z"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alchera OCR Sample" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PnU-OP-xFW">
+                                                <rect key="frame" x="52.666666666666671" y="60" width="194.66666666666663" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7H2-53-EW3">
+                                        <rect key="frame" x="0.0" y="114" width="300" height="470"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2U-6y-God">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                                <color key="backgroundColor" name="alcheraColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Nuc-3j-L8z"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="주민등록증/운전면허증">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ocrButtonPressed:" destination="1Gu-gj-T7Q" eventType="touchUpInside" id="PoE-fi-Hko"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYk-Km-JYe">
+                                                <rect key="frame" x="0.0" y="70" width="300" height="50"/>
+                                                <color key="backgroundColor" name="alcheraColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="yEA-SP-WGk"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="국내여권/해외여권">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ocrButtonPressed:" destination="1Gu-gj-T7Q" eventType="touchUpInside" id="ohE-4r-eEc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvZ-XS-Ak0">
+                                                <rect key="frame" x="0.0" y="140" width="300" height="50"/>
+                                                <color key="backgroundColor" name="alcheraColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="7iM-FR-foJ"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="외국인등록증">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ocrButtonPressed:" destination="1Gu-gj-T7Q" eventType="touchUpInside" id="u8t-lx-vSe"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Arf-9k-4mC">
+                                                <rect key="frame" x="0.0" y="210" width="300" height="50"/>
+                                                <color key="backgroundColor" name="alcheraColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="q8W-tg-0JY"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="신용카드">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ocrButtonPressed:" destination="1Gu-gj-T7Q" eventType="touchUpInside" id="1O0-49-hHl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ypI-ap-mOT">
+                                                <rect key="frame" x="0.0" y="280" width="300" height="50"/>
+                                                <color key="backgroundColor" name="alcheraColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="LzK-WZ-Zlo"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="주민등록증/운전면허증           + 사본판별" titleAlignment="center">
+                                                    <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ocrButtonPressed:" destination="1Gu-gj-T7Q" eventType="touchUpInside" id="sD1-Hg-UPA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="jLH-71-YPB">
+                                                <rect key="frame" x="0.0" y="350" width="300" height="50"/>
+                                                <color key="backgroundColor" name="alcheraColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="CTp-st-PsT"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="국내여권/해외여권       + 사본판별" titleAlignment="center">
+                                                    <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ocrButtonPressed:" destination="1Gu-gj-T7Q" eventType="touchUpInside" id="EoQ-Ag-c67"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ez1-oW-7gc">
+                                                <rect key="frame" x="0.0" y="420" width="300" height="50"/>
+                                                <color key="backgroundColor" name="alcheraColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="l0f-sy-Hhj"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="외국인등록증  + 사본판별" titleAlignment="center">
+                                                    <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="ocrButtonPressed:" destination="1Gu-gj-T7Q" eventType="touchUpInside" id="kyk-Ob-YRP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="43i-op-Q2X"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="flD-Nf-qro"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7e5-WA-YYO" firstAttribute="centerX" secondItem="5KT-VN-sNH" secondAttribute="centerX" id="Ctz-XS-2yc"/>
+                            <constraint firstItem="7e5-WA-YYO" firstAttribute="centerY" secondItem="5KT-VN-sNH" secondAttribute="centerY" id="Vk7-He-DTo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JjV-Jg-hmK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VjJ-BT-Yet" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86" y="-27"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Eua-vx-cLC">
+            <objects>
+                <viewController storyboardIdentifier="webView" id="Mgo-Tf-Y8e" customClass="WebViewController" customModule="wasm_ocr_sample_ios_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gfw-wo-j3D">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="uJH-IS-Som"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VT7-tf-OCy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0m-Cq-zHh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1738" y="-27"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="a2b-nn-mfu">
+            <objects>
+                <navigationController storyboardIdentifier="navWeb" automaticallyAdjustsScrollViewInsets="NO" id="F0z-s3-WUP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F6h-Gj-Psf">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Mgo-Tf-Y8e" kind="relationship" relationship="rootViewController" id="6nh-nX-xKQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o2S-iR-sds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931" y="-27"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gc6-g5-pIv">
+            <objects>
+                <navigationController storyboardIdentifier="navReport" automaticallyAdjustsScrollViewInsets="NO" id="EYT-6j-eFx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tNG-HP-kdp">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NUp-Ct-JoA" kind="relationship" relationship="rootViewController" id="TlM-67-iUh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="24x-z8-5yf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="931" y="670"/>
+        </scene>
+        <!--Report View Controller-->
+        <scene sceneID="uIB-VY-aaG">
+            <objects>
+                <viewController storyboardIdentifier="reportView" id="NUp-Ct-JoA" customClass="ReportViewController" customModule="wasm_ocr_sample_ios_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eXB-85-5kT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lbj-in-EhZ">
+                                <rect key="frame" x="0.0" y="123" width="414" height="677"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v84-y0-jqV">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="503"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Mqe-oB-k0l">
+                                                <rect key="frame" x="20" y="0.0" width="374" height="483"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="k4v-hH-FMk" userLabel="result">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="74.333333333333329"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이벤트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hx-FC-hwl">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="19.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v2N-BC-gXl">
+                                                                <rect key="frame" x="0.0" y="24.333333333333343" width="374" height="50"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="BgC-UB-I4g"/>
+                                                                </constraints>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xaR-bN-JX1" userLabel="detail">
+                                                        <rect key="frame" x="0.0" y="104.33333333333333" width="374" height="174.33333333333337"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상세 결과" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TdI-Ld-HSe">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="19.333333333333332"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="08h-sm-cfj">
+                                                                <rect key="frame" x="0.0" y="24.333333333333314" width="374" height="150"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="150" id="KZw-Wi-giw"/>
+                                                                </constraints>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Ep-yR-2k4" userLabel="id_card_verification">
+                                                        <rect key="frame" x="0.0" y="308.66666666666669" width="374" height="174.33333333333331"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="sAU-3s-MuL">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="19.333333333333332"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OCR 종류" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1h-u8-huY">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65.333333333333329" height="19.333333333333332"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주민등록증/운전면허증" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGv-dI-0Ji">
+                                                                        <rect key="frame" x="231" y="0.0" width="143" height="19.333333333333332"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <color key="textColor" name="alcheraColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Daf-vZ-QiU">
+                                                                <rect key="frame" x="0.0" y="24.333333333333314" width="374" height="150"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GTn-Bs-X6d">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="150"/>
+                                                                    </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vQJ-O0-24J">
+                                                                        <rect key="frame" x="197" y="0.0" width="177" height="150"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="xCD-3b-Ddt"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Mqe-oB-k0l" secondAttribute="trailing" constant="20" id="4bp-ft-2Gx"/>
+                                            <constraint firstAttribute="height" priority="250" constant="1000" id="KM5-aW-Y2q"/>
+                                            <constraint firstAttribute="bottom" secondItem="Mqe-oB-k0l" secondAttribute="bottom" constant="20" id="Ojw-K1-HgG"/>
+                                            <constraint firstItem="Mqe-oB-k0l" firstAttribute="leading" secondItem="v84-y0-jqV" secondAttribute="leading" constant="20" id="T7d-Sa-58e"/>
+                                            <constraint firstItem="Mqe-oB-k0l" firstAttribute="top" secondItem="v84-y0-jqV" secondAttribute="top" id="uSe-pW-j8I"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="v84-y0-jqV" firstAttribute="leading" secondItem="pj2-7P-xG7" secondAttribute="leading" id="BGk-rw-zDD"/>
+                                    <constraint firstItem="v84-y0-jqV" firstAttribute="width" secondItem="Zmz-Px-xfD" secondAttribute="width" id="lWT-wL-B24"/>
+                                    <constraint firstItem="v84-y0-jqV" firstAttribute="trailing" secondItem="pj2-7P-xG7" secondAttribute="trailing" id="mzu-Qk-9Uc"/>
+                                    <constraint firstItem="v84-y0-jqV" firstAttribute="bottom" secondItem="pj2-7P-xG7" secondAttribute="bottom" id="puF-iL-oCT"/>
+                                    <constraint firstItem="v84-y0-jqV" firstAttribute="top" secondItem="pj2-7P-xG7" secondAttribute="top" id="roo-Wk-5k5"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="pj2-7P-xG7"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Zmz-Px-xfD"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Izs-pe-EK5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Izs-pe-EK5" firstAttribute="trailing" secondItem="Lbj-in-EhZ" secondAttribute="trailing" id="7le-VA-Qj6"/>
+                            <constraint firstItem="Lbj-in-EhZ" firstAttribute="top" secondItem="Izs-pe-EK5" secondAttribute="top" constant="20" id="Few-eM-E58"/>
+                            <constraint firstAttribute="bottom" secondItem="Lbj-in-EhZ" secondAttribute="bottom" id="Ip9-mH-FaK"/>
+                            <constraint firstItem="Lbj-in-EhZ" firstAttribute="leading" secondItem="Izs-pe-EK5" secondAttribute="leading" id="odU-Yc-jxp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QTi-5u-lRa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="drd-AV-gdB">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="NUp-Ct-JoA" id="3dA-8I-fZx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="414" height="800"/>
+                    <connections>
+                        <outlet property="imgIdMasking" destination="GTn-Bs-X6d" id="YyP-34-tWb"/>
+                        <outlet property="imgIdOrigin" destination="vQJ-O0-24J" id="N0E-aG-7Qa"/>
+                        <outlet property="lblOcrType" destination="VGv-dI-0Ji" id="RV9-Qm-fB7"/>
+                        <outlet property="txtDetail" destination="08h-sm-cfj" id="twR-Lu-Cp7"/>
+                        <outlet property="txtEvent" destination="v2N-BC-gXl" id="SXp-EY-a2B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iVc-2K-qRD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1751" y="651"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="alcheraLogo" width="395" height="121"/>
+        <namedColor name="alcheraColor">
+            <color red="0.0" green="0.2630000114440918" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
