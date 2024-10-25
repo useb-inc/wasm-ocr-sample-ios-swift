@@ -64,8 +64,24 @@ class ReportViewController: UIViewController {
     func prettyPrintedJson(_ jsonString: String) -> String? {
         guard let jsonData = jsonString.data(using: .utf8) else { return nil }
         do {
-            let jsonObject = try JSONSerialization.jsonObject(with: jsonData)
-            let prettyData = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
+            var jsonDict = try JSONSerialization.jsonObject(with: jsonData) as? [String: Any]
+            var reviewResultDict = jsonDict?["review_result"] as? [String: Any]
+            
+            if let ocrFaceImgStr = reviewResultDict?["ocr_face_image"] as? String {
+                reviewResultDict?["ocr_face_image"] = ocrFaceImgStr.prefix(20) + "...생략..."
+            }
+            
+            if let ocrMaskingImgStr = reviewResultDict?["ocr_masking_image"] as? String {
+                reviewResultDict?["ocr_masking_image"] = ocrMaskingImgStr.prefix(20) + "...생략..."
+            }
+            
+            if let ocrOriginImgStr = reviewResultDict?["ocr_origin_image"] as? String {
+                reviewResultDict?["ocr_origin_image"] = ocrOriginImgStr.prefix(20) + "...생략..."
+            }
+            
+            jsonDict?["review_result"] = reviewResultDict
+            
+            let prettyData = try JSONSerialization.data(withJSONObject: jsonDict as Any, options: [.prettyPrinted, .sortedKeys])
             let prettyString = String(data: prettyData, encoding: .utf8)
             return prettyString
         } catch {

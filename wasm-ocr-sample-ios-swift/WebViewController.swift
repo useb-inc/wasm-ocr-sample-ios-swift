@@ -33,7 +33,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKScriptMessageHandler 
         super.loadView()
         let webConfiguration = WKWebViewConfiguration()
         webConfiguration.allowsInlineMediaPlayback = true
-        webConfiguration.preferences.javaScriptEnabled = true
+        webConfiguration.defaultWebpagePreferences.allowsContentJavaScript = true
         
         // OCR 정보를 담은 postMessage 설정
         guard let requestData = encodedPostMessage() else { return }
@@ -119,11 +119,11 @@ class WebViewController: UIViewController, WKUIDelegate, WKScriptMessageHandler 
             responseJson = decodedMessage
         } else if ocrResponse.result == "error" {
             print("오류가 발생했습니다. \(decodedMessage)")
-            responseJson = decodedMessage;
+            responseJson = decodedMessage
         } else {
             print("유효하지 않은 결과입니다. \(ocrResponse.result ?? "")")
-            result = nil;
-            responseJson = nil;
+            result = nil
+            responseJson = nil
         }
         
         loadReportView()
